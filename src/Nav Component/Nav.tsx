@@ -16,8 +16,8 @@ const Nav = () => {
                     <li>Contact</li>
                 </ul>
                 <div className='flex gap-2'>
-                    <button className="btn btn-success h-8">Sign In</button>
-                    <button className="btn btn-secondary h-8">Sign Up</button>
+                    <button className="btn btn-success h-8 ">Sign In</button>
+                    <button className="btn btn-secondary h-8 bg-linear-to-r from-[#F97316]  to-[#EC4899] text-white py-2 px-6 rounded-lg cursor-pointer border-0">Sign Up</button>
                 </div>
             </nav>
         </div>
