@@ -12,12 +12,18 @@ const Technologies = ({ datas }: DataProps) => {
   let data = use(datas);
 
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [selectedstacks, setSelectedStacks] = useState<DataType[]>([]);
 
-  const handleBtn = (value: string, value2: string) => {
-   
+  const handletheSelectedBtn = ()=>{
+    setSelectedStacks([])
+    toast("All Data Removed Successfully")
+  }
+
+  const handleBtn = (value: string, value2: string, value3:DataType) => {
     toast.success(`${value2} is Added Successfully`);
     setSelectedIds([...selectedIds, value]);
-  };
+    setSelectedStacks([...selectedstacks, value3])
+  };  
 
   return (
     <div className="container m-auto flex gap-5">
@@ -26,7 +32,10 @@ const Technologies = ({ datas }: DataProps) => {
         selectedIds={selectedIds}
         handleBtn={handleBtn}
       />
-      <SelectedStack />
+      <SelectedStack
+        selectedstacks={selectedstacks}
+        handletheSelectedBtn={handletheSelectedBtn}
+      />
     </div>
   );
 };

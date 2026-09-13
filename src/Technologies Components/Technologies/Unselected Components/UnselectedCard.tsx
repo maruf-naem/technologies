@@ -4,7 +4,7 @@ import type { DataType } from "../../../DataType";
 interface StackProps {
   stack: DataType;
   selectedIds: string[];
-  handleBtn: (value: string, value2: string) => void;
+  handleBtn: (value: string, value2: string, value3:DataType) => void;
 }
 
 const UnselectedCard = ({
@@ -49,7 +49,7 @@ const UnselectedCard = ({
       </div>
 
       <button
-        onClick={() => handleBtn(stack.id, stack.name)}
+        onClick={() => handleBtn(stack.id, stack.name, stack)}
         disabled={isSelected}
         type="button"
         className="mt-4 w-full rounded-lg bg-gray-950 py-2.5 text-sm font-medium text-white transition-colors duration-200 hover:bg-gray-800"

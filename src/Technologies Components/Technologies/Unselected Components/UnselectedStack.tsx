@@ -4,7 +4,7 @@ import UnselectedCard from "./UnselectedCard";
 interface DataProps {
   data: DataType[];
   selectedIds: string[];
-  handleBtn: (value: string, value2: string) => void;
+  handleBtn: (value: string, value2: string , value3:DataType) => void;
 }
 const UnselectedStack = ({
   data,
@@ -14,7 +14,7 @@ const UnselectedStack = ({
   // console.log(data);
   return (
     <>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {data.map((stack) => {
           return (
             <UnselectedCard
