@@ -1,7 +1,8 @@
 import UnselectedStack from "./Unselected Components/UnselectedStack";
 import SelectedStack from "./Selected Components/SelectedStack";
-import { use } from "react";
+import { use, useState } from "react";
 import type { DataType } from "../../DataType";
+import { toast } from "react-toastify";
 
 interface DataProps {
   datas: Promise<DataType[]>;
@@ -10,9 +11,21 @@ interface DataProps {
 const Technologies = ({ datas }: DataProps) => {
   let data = use(datas);
 
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+
+  const handleBtn = (value: string, value2: string) => {
+    const x = data.filter((item) => item.id === value);
+    toast.success(`${value2} is Added Successfully`);
+    setSelectedIds([...selectedIds, value]);
+  };
+
   return (
-    <div className="container m-auto">
-      <UnselectedStack data={data} />
+    <div className="container m-auto flex gap-5">
+      <UnselectedStack
+        data={data}
+        selectedIds={selectedIds}
+        handleBtn={handleBtn}
+      />
       <SelectedStack />
     </div>
   );

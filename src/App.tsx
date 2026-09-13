@@ -1,3 +1,4 @@
+
 import "./App.css";
 import type { DataType } from "./DataType";
 import Home from "./Hero Component/Home";
@@ -20,6 +21,7 @@ function App() {
       <Home />
       <TitleSection />
       <Technologies datas={dataPromise} />
+      
     </>
   );
 }
