@@ -14,7 +14,7 @@ const Technologies = ({ datas }: DataProps) => {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   const handleBtn = (value: string, value2: string) => {
-    const x = data.filter((item) => item.id === value);
+   
     toast.success(`${value2} is Added Successfully`);
     setSelectedIds([...selectedIds, value]);
   };
