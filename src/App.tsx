@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import "./App.css";
 import type { DataType } from "./DataType";
 import Home from "./Hero Component/Home";
@@ -13,6 +14,7 @@ const data = async (): Promise<DataType[]> => {
 };
 
 const dataPromise = data();
+
 
 function App() {
   return (

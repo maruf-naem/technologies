@@ -4,7 +4,7 @@ import UnselectedCard from "./UnselectedCard";
 interface DataProps {
   data: DataType[];
   selectedIds: string[];
-  handleBtn: (value: string, value2: string , value3:DataType) => void;
+  handleBtn: (value: string, value2: string, value3: DataType) => void;
 }
 const UnselectedStack = ({
   data,

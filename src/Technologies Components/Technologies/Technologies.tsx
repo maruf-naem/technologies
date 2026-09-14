@@ -13,10 +13,21 @@ const Technologies = ({ datas }: DataProps) => {
 
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [selectedstacks, setSelectedStacks] = useState<DataType[]>([]);
+  const [dataStack, setDataStack] = useState<DataType[]>(data);
+  console.log(dataStack);
+  
 
   const handletheSelectedBtn = ()=>{
     setSelectedStacks([])
     toast("All Data Removed Successfully")
+  }
+
+  const handleSelectedStack = (value:string)=>{
+    let x = selectedstacks.filter((item)=>{
+      return item.id !== value
+    })
+    setSelectedStacks(x)
+    setDataStack(data);
   }
 
   const handleBtn = (value: string, value2: string, value3:DataType) => {
@@ -28,12 +39,13 @@ const Technologies = ({ datas }: DataProps) => {
   return (
     <div className="container m-auto flex gap-5">
       <UnselectedStack
-        data={data}
+        data={dataStack}
         selectedIds={selectedIds}
         handleBtn={handleBtn}
       />
       <SelectedStack
         selectedstacks={selectedstacks}
+        handleSelectedStack={handleSelectedStack}
         handletheSelectedBtn={handletheSelectedBtn}
       />
     </div>

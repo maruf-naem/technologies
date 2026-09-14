@@ -3,12 +3,14 @@ import type { DataType } from "../../../DataType";
 
 interface Selectedstacks {
   selectedstacks: DataType[];
-  handletheSelectedBtn: ()=>void
+  handletheSelectedBtn: () => void;
+  handleSelectedStack: (value:string)=> void;
 }
 
 const SelectedStack = ({
   selectedstacks,
   handletheSelectedBtn,
+  handleSelectedStack
 }: Selectedstacks) => {
   return (
     <div className="w-full max-w-[260px] rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
@@ -52,7 +54,7 @@ const SelectedStack = ({
                 <button
                   type="button"
                   className="flex h-6 w-6 items-center justify-center text-gray-400 transition hover:text-gray-600"
-                  onClick={() => {}}
+                  onClick={() => {handleSelectedStack(item.id)}}
                 >
                   <RxCross1 size={13} strokeWidth={1.5} />
                 </button>
@@ -66,7 +68,7 @@ const SelectedStack = ({
                bg-white text-[11px] font-medium text-red-500
                transition hover:bg-red-50"
             onClick={() => {
-              handletheSelectedBtn()
+              handletheSelectedBtn();
             }}
           >
             Remove All
